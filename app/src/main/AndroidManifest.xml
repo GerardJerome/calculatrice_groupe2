@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calculatrice_groupe2">
         <activity
+            android:name=".HistoriqueActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CalculatriceActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

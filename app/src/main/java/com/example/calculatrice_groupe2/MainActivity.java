@@ -1,6 +1,10 @@
 package com.example.calculatrice_groupe2;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +13,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button boutonCalculatrice;
+    private Button boutonHistorique;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +26,17 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+        boutonCalculatrice = findViewById(R.id.bouton_calculatrice);
+        boutonHistorique = findViewById(R.id.bouton_historique);
+        boutonCalculatrice.setOnClickListener(v -> {
+            Intent intent = new Intent(this, CalculatriceActivity.class);
+            startActivity(intent);
+        });
+
+        boutonHistorique.setOnClickListener(v -> {
+            Intent intent = new Intent(this, HistoriqueActivity.class);
+            startActivity(intent);
         });
     }
 }
